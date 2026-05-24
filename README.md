@@ -1,4 +1,4 @@
-# Stargroup Tracker Link
+# dashboard Tracker Link
 
 Dashboard mandiri untuk memantau **pengunjung** & **klik CTA** dari 10 landing page.
 Pure PHP + SQLite — **tinggal upload ke cPanel**, tanpa setup database manual,
@@ -8,13 +8,13 @@ tanpa Node, tanpa framework, tanpa logo pihak ketiga.
 
 ## 1. Cara Pasang di cPanel
 
-1. **Upload** seluruh folder `stargroup-tracker/` ke `public_html/` (atau subdomain) di File Manager cPanel.
-   - Contoh akhirnya: `https://situsmu.com/stargroup-tracker/`
+1. **Upload** seluruh folder `dashboard-tracker/` ke `public_html/` (atau subdomain) di File Manager cPanel.
+   - Contoh akhirnya: `https://situsmu.com/-tracker/`
 2. **Pastikan PHP** versi 7.4+ aktif (default di hampir semua cPanel).
    - Ekstensi yang dipakai: `pdo_sqlite` (sudah aktif default).
 3. **Pastikan folder `data/` writable** — biasanya otomatis. Jika perlu, set chmod ke `755`.
-4. **Buka** `https://situsmu.com/stargroup-tracker/` — Anda akan melihat halaman login.
-5. **Login** dengan password default `stargroup2026`.
+4. **Buka** `https://situsmu.com/dashboard-tracker/` — Anda akan melihat halaman login.
+5. **Login** dengan password default `dashboard2026`.
 6. **Ganti password** dengan mengedit file `config.php` baris `'admin_password' => '...'`.
 
 > Folder `data/` dilindungi dengan `.htaccess` — tidak bisa diakses dari web,
@@ -30,7 +30,7 @@ Klik → copy → tempel **sebelum `</body>`** di file `index.html` landing page
 Contoh untuk Tracker #1:
 
 ```html
-<script src="https://situsmu.com/stargroup-tracker/t.php?id=1" async></script>
+<script src="https://situsmu.com/dashboard-tracker/t.php?id=1" async></script>
 ```
 
 Tracker #2 menggunakan `?id=2`, dan seterusnya sampai `?id=10`.
@@ -90,7 +90,7 @@ Anda juga bisa memicu event dari kode sendiri:
 ## 5. Struktur File
 
 ```
-stargroup-tracker/
+dashboard-tracker/
 ├── index.php          ← halaman login
 ├── dashboard.php      ← UI utama (10 container neon)
 ├── api.php            ← endpoint JSON internal (auth required)
@@ -117,7 +117,7 @@ Edit `config.php`:
 ```php
 return [
     'admin_password' => 'GantiPasswordKuat123',
-    'brand_name'     => 'Stargroup',
+    'brand_name'     => 'dashboard',
     'brand_subtitle' => 'Tracker Link',
     'tracker_count'  => 10,   // bisa diubah
     'visit_session_minutes' => 30,
