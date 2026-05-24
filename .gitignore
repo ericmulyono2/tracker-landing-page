@@ -1,0 +1,5 @@
+data/tracker.sqlite
+data/tracker.sqlite-*
+*.log
+.DS_Store
+Thumbs.db
